@@ -1,0 +1,52 @@
+
+@height: 50px; 
+@width: 50px;
+
+.chip {
+  align-items: center;
+  background-color: lightsteelblue;
+  border-radius: 22.5px;
+  cursor: default;
+  display: inline-flex;
+  flex-direction: row;
+  color: lightyellow;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  height: @height;
+  justify-content: center;
+  outline: none;
+  padding: 0;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin: 20px;
+  filter: drop-shadow( 1px 1px 1px rgba(0, 0, 0, 0.5));
+}
+
+.chip-head {
+  align-items: center;
+  background-color: #32C5D2;
+  border-radius: 50%;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px #000;
+  display: flex;
+  flex-shrink: 0;
+  font-size: 1.25rem;
+  justify-content: center;
+  margin-right: -4px;
+  overflow: hidden;
+  position: relative;
+  width: @width;
+  height: @height;
+  filter: drop-shadow( 1px 1px 1px rgba(0, 0, 0, 0.7));
+}
+
+.chip-content {
+  align-items: center;
+  cursor: inherit;
+  display: flex;
+  padding-left: 12px;
+  padding-right: 12px;
+  white-space: nowrap;
+}

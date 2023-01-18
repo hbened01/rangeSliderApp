@@ -1,0 +1,144 @@
+@background_color_1: red;
+
+.wrapper {
+	position: relative;
+	display: flex;
+	align-items: center;
+	margin: 40px calc(16px / 2);
+	padding-top: 1.6rem;
+	width: 40vw;
+	height: calc(16px + 1.6rem);
+}
+
+.input-wrapper {
+	width: calc(100% + 16px);
+	margin: 0 calc(16px / -2);
+	position: absolute;
+	height: 16px;
+}
+
+.control-wrapper {
+	width: 100%;
+	position: absolute;
+	height: 16px;
+}
+
+.input {
+	position: absolute;
+	width: 100%;
+	pointer-events: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	height: 100%;
+	opacity: 0;
+	z-index: 3;
+	padding: 0;
+
+	&::-ms-track {
+		appearance: none;
+		background: transparent;
+		border: transparent;
+	}
+
+	&::-moz-range-track {
+		-moz-appearance: none;
+		appearance: none;
+		background: transparent;
+		border: transparent;
+	}
+
+	&:focus {
+		&::-webkit-slider-runnable-track {
+			-webkit-appearance: none;
+			appearance: none;
+			background: transparent;
+			border: transparent;
+		}
+	}
+
+	&::-ms-thumb {
+		appearance: none;
+		pointer-events: all;
+		width: 16px;
+		height: 16px;
+		border-radius: 0px;
+		border: 0 none;
+		cursor: grab;
+		background-color: @background_color_1;
+
+		&:active {
+			cursor: grabbing;
+		}
+	}
+
+	&::-moz-range-thumb {
+		-moz-appearance: none;
+		appearance: none;
+		pointer-events: all;
+		width: 16px;
+		height: 16px;
+		border-radius: 0px;
+		border: 0 none;
+		cursor: grab;
+		background-color: @background_color_1;
+
+		&:active {
+			cursor: grabbing;
+		}
+	}
+
+	&::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		pointer-events: all;
+		width: 16px;
+		height: 16px;
+		border-radius: 0px;
+		border: 0 none;
+		cursor: -webkit-grab;
+		cursor: grab;
+		background-color: @background_color_1;
+
+		&:active {
+			cursor: -webkit-grabbing;
+			cursor: grabbing;
+		}
+	}
+}
+
+.rail {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 6px;
+	border-radius: 3px;
+	background: lightgrey;
+}
+
+.inner-rail {
+	position: absolute;
+	height: 100%;
+	background: hotpink;
+	opacity: 0.5;
+}
+
+.control {
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	position: absolute;
+	background: hotpink;
+	top: 50%;
+	margin-left: calc(16px / -2);
+	transform: translate3d(0, -50%, 0);
+	z-index: 2;
+}
+
+.control span {
+	position: absolute;
+	top: 20px;
+	left: 5px;
+	font-weight: bold;
+}
