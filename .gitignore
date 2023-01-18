@@ -5,19 +5,8 @@
 /.pnp
 .pnp.js
 
-# testing
-/coverage
-
-# production
-/build
-/dist
-maestro_ana_.zip
-.maestro_ana.zip.icloud
-
 # ENVs
 .env*
-ecosystem.config.js
-pm2.config.js
 
 # misc
 .DS_Store
