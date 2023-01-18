@@ -36,6 +36,7 @@ const Exercise1 = () => {
         max={max}
         step={step}
         value={value}
+        range={[]}
         onChange={setValue}
       />
       <Chip head={`Min`} content={`result value is: ${value.min}€`} />

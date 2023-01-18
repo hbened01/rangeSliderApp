@@ -1,4 +1,5 @@
-@background_color_1: red;
+@background_color: red;
+@shadow-color:  #274684;
 
 .wrapper {
 	position: relative;
@@ -65,7 +66,7 @@
 		border-radius: 0px;
 		border: 0 none;
 		cursor: grab;
-		background-color: @background_color_1;
+		background-color: @background_color;
 
 		&:active {
 			cursor: grabbing;
@@ -81,7 +82,7 @@
 		border-radius: 0px;
 		border: 0 none;
 		cursor: grab;
-		background-color: @background_color_1;
+		background-color: @background_color;
 
 		&:active {
 			cursor: grabbing;
@@ -98,7 +99,7 @@
 		border: 0 none;
 		cursor: -webkit-grab;
 		cursor: grab;
-		background-color: @background_color_1;
+		background-color: @background_color;
 
 		&:active {
 			cursor: -webkit-grabbing;
@@ -115,6 +116,8 @@
 	height: 6px;
 	border-radius: 3px;
 	background: lightgrey;
+	-webkit-filter: drop-shadow( 1px 1px 1px rgba(0, 0, 0, 0.7));
+	filter: drop-shadow( 1px 1px 1px rgba(0, 0, 0, 0.7));
 }
 
 .inner-rail {
@@ -122,11 +125,13 @@
 	height: 100%;
 	background: hotpink;
 	opacity: 0.5;
+	-webkit-filter: drop-shadow( 1px 1px 1px rgba(0, 0, 0, 0.7));
+	filter: drop-shadow( 1px 1px 1px rgba(0, 0, 0, 0.7));
 }
 
 .control {
-	width: 16px;
-	height: 16px;
+	width: 20px;
+	height: 20px;
 	border-radius: 50%;
 	position: absolute;
 	background: hotpink;
@@ -134,11 +139,13 @@
 	margin-left: calc(16px / -2);
 	transform: translate3d(0, -50%, 0);
 	z-index: 2;
+	-webkit-filter: drop-shadow( 1px 1px 1px rgba(0, 0, 0, 0.7));
+	filter: drop-shadow( 1px 1px 1px rgba(0, 0, 0, 0.7));
 }
 
 .control span {
 	position: absolute;
-	top: 20px;
+	top: 25px;
 	left: 5px;
-	font-weight: bold;
+	font-weight: lighter;
 }

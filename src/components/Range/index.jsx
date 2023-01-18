@@ -1,8 +1,7 @@
 import React, { useState, Fragment, useRef, useEffect } from 'react'
 import './index.less'
 
-const Range = ({ min, max, value, step, onChange }) => {
-
+const Range = ({ min, max, step, value, range, onChange }) => {
   const [minValue, setMinValue] = useState(value ? value.min : min);
   const [maxValue, setMaxValue] = useState(value ? value.max : max);
 
@@ -17,14 +16,26 @@ const Range = ({ min, max, value, step, onChange }) => {
     e.preventDefault();
     const newMinVal = Math.min(+e.target.value, maxValue - step);
     if (!value) setMinValue(newMinVal);
-    onChange({ min: newMinVal, max: maxValue });
+    if ( range.length > 0 ) {
+      if (range.indexOf(newMinVal) !== -1) {
+        onChange({ min: newMinVal, max: maxValue });
+      }
+    } else {
+      onChange({ min: newMinVal, max: maxValue });
+    }
   };
 
   const handleMaxChange = e => {
     e.preventDefault();
     const newMaxVal = Math.max(+e.target.value, minValue + step);
     if (!value) setMaxValue(newMaxVal);
-    onChange({ min: minValue, max: newMaxVal });
+    if ( range.length > 0 ) {
+      if (range.indexOf(newMaxVal) !== -1) {
+        onChange({ min: minValue, max: newMaxVal });
+      }
+    } else {
+      onChange({ min: minValue, max: newMaxVal });
+    }
   };
 
   const minPos = ((minValue - min) / (max - min)) * 100;
@@ -57,7 +68,7 @@ const Range = ({ min, max, value, step, onChange }) => {
       <div className="control-wrapper">
         <div className="control" style={{ left: `${minPos}%` }} >
           <span>
-            {min}€
+            {value.min}€
           </span>
         </div>
         <div className="rail">
@@ -68,7 +79,7 @@ const Range = ({ min, max, value, step, onChange }) => {
         </div>
         <div className="control" style={{ left: `${maxPos}%` }} >
           <span>
-            {max}€
+            {value.max}€
           </span>
         </div>
       </div>
