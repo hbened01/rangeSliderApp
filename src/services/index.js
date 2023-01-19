@@ -1,4 +1,5 @@
-const {API_URL_MOCK_DATA} = process.env
+// GET FIXED AND NORMAL CASE FROM: (http://demo3373948.mockable.io/)
+const { API_URL_MOCK_DATA } = process.env
 
 export const getNormalRange = async () => {
   try {

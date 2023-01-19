@@ -1,4 +1,5 @@
-import React, { useState, Fragment, useRef, useEffect } from "react";
+import React from "react";
+import { PropTypes } from "prop-types";
 import "./index.less";
 
 const Chip = ({ head, content }) => {
@@ -9,5 +10,10 @@ const Chip = ({ head, content }) => {
     </div>
   );
 };
+
+Chip.propTypes = {
+  head: PropTypes.string,
+  content: PropTypes.string
+}
 
 export default Chip;

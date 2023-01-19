@@ -1,47 +1,56 @@
-import React, { useState, Fragment, useRef, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
+import { PropTypes } from "prop-types";
 import './index.less'
 
-const Range = ({ min, max, step, value, range, onChange }) => {
-  const [minValue, setMinValue] = useState(value ? value.min : min);
-  const [maxValue, setMaxValue] = useState(value ? value.max : max);
+const Range = ({ min, max, step, value, range, onChangeValue }) => {
+  // SET STATE:
+  const [minValue, setMinValue] = useState(value ? value.min : min)
+  const [maxValue, setMaxValue] = useState(value ? value.max : max)
 
+  // VERIFIC IF VALUE CHANGE:
   useEffect(() => {
     if (value) {
-      setMinValue(value.min);
-      setMaxValue(value.max);
+      setMinValue(value?.min)
+      setMaxValue(value?.max)
     }
-  }, [value]);
+  }, [value])
 
-  const handleMinChange = e => {
-    e.preventDefault();
-    const newMinVal = Math.min(+e.target.value, maxValue - step);
-    if (!value) setMinValue(newMinVal);
+  // SET NEW MIN VALUE IF ONCHANGE ACTIVATE: 
+  const handleMinValueChange = e => {
+    e.preventDefault()
+    const newMinVal = Math.min(+e.target.value, maxValue - step)
+    if (!value) setMinValue(newMinVal)
+    // IF RANGE FIXED 
     if ( range.length > 0 ) {
       if (range.indexOf(newMinVal) !== -1) {
-        onChange({ min: newMinVal, max: maxValue });
+        onChangeValue({ min: newMinVal, max: maxValue })
       }
-    } else {
-      onChange({ min: newMinVal, max: maxValue });
+      return
     }
-  };
+    onChangeValue({ min: newMinVal, max: maxValue })
+  }
 
-  const handleMaxChange = e => {
-    e.preventDefault();
-    const newMaxVal = Math.max(+e.target.value, minValue + step);
-    if (!value) setMaxValue(newMaxVal);
+  // SET NEW MIN VALUE IF ONCHANGE ACTIVATE: 
+  const handleMaxValueChange = e => {
+    e.preventDefault()
+    const newMaxVal = Math.max(+e.target.value, minValue + step)
+    if (!value) setMaxValue(newMaxVal)
+    // IF RANGE FIXED 
     if ( range.length > 0 ) {
       if (range.indexOf(newMaxVal) !== -1) {
-        onChange({ min: minValue, max: newMaxVal });
+        onChangeValue({ min: minValue, max: newMaxVal })
       }
-    } else {
-      onChange({ min: minValue, max: newMaxVal });
+      return
     }
-  };
+    onChangeValue({ min: minValue, max: newMaxVal })
+  }
 
-  const minPos = ((minValue - min) / (max - min)) * 100;
-  const maxPos = ((maxValue - min) / (max - min)) * 100;
+  // CALCULATE PERCENT OF MIN AND MAX POSITION CONTROL:
+  const minPos = ((minValue - min) / (max - min)) * 100
+  const maxPos = ((maxValue - min) / (max - min)) * 100
 
   return (
+
     <div className="wrapper">
 
       <div className="input-wrapper">
@@ -52,7 +61,7 @@ const Range = ({ min, max, step, value, range, onChange }) => {
           min={min}
           max={max}
           step={step}
-          onChange={handleMinChange}
+          onChange={handleMinValueChange}
         />
         <input
           className="input"
@@ -61,10 +70,11 @@ const Range = ({ min, max, step, value, range, onChange }) => {
           min={min}
           max={max}
           step={step}
-          onChange={handleMaxChange}
+          onChange={handleMaxValueChange}
         />
       </div>
 
+      {/* CONTROL CSS SLIDER REACTIVE FROM INPUTS RANGES MIN AND MAX */}
       <div className="control-wrapper">
         <div className="control" style={{ left: `${minPos}%` }} >
           <span>
@@ -85,7 +95,17 @@ const Range = ({ min, max, step, value, range, onChange }) => {
       </div>
 
     </div>
-  );
-};
 
-export default Range;
+  )
+}
+
+Range.propTypes = {
+  min: PropTypes.number,
+  max: PropTypes.number,
+  step: PropTypes.number,
+  value: PropTypes.object,
+  range: PropTypes.array,
+  onChangeValue: PropTypes.func,
+}
+
+export default Range

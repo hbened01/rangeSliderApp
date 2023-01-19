@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Exercise1, Exercise2 } from './../views'
 import { NotFound } from "./../components"
 
+// ADD CONFIG ROUTES:
 const routes = () => {
   const Exercise1Component = <Exercise1 />
   const Exercise2Component = <Exercise2 />

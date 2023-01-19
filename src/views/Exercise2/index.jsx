@@ -5,18 +5,22 @@ import { getFixedRange } from "./../../services";
 import "./index.less"
 
 const Exercise2 = () => {
+  // SET INITIALIZATION STATES
   const [min, setMin] = useState(0)
   const [max, setMax] = useState(0)
   const [step, setStep] = useState(0)
   const [value, setValue] = useState({ min, max })
   const [range, setRange] = useState([])
   const navigate = useNavigate();
-  const goToNextExercise = (e) => {
+
+  // ONCLICK TO NEXT EXERCISE:
+  const handleGoToNextExercise = (e) => {
     e.preventDefault();
     navigate('/exercise1');
   };
 
   useEffect(() => {
+    // GET FIXED RANGE FROM API MOCKING ASYNC:
     getFixedRange()
       .then((data) => {
         const range = data?.valueRanges.sort((a, b) => a - b)
@@ -33,10 +37,13 @@ const Exercise2 = () => {
       
   return (
     <div className="content-range">
-      <Range min={min} max={max} step={step} value={value} range={range} onChange={setValue} />
+      {/* RANGE SLIDER COMPONENT NORMAL CASE NOT RANGE FIXED */}
+      <Range min={min} max={max} step={step} value={value} range={range} onChangeValue={setValue} />
+      {/* CHIP TEXT COMPONENTS */}
       <Chip head={`Min`} content={`result value is: ${value.min}€`} />
       <Chip head={`Max`} content={`result value is: ${value.max}€`} />
-      <button className="button-go" role="button" onClick={goToNextExercise}>Go to Exercise 1</button>
+      {/* GO TO NEXT EXERCISE */}
+      <button className="button-go" role="button" onClick={handleGoToNextExercise}>Go to Exercise 1</button>
     </div>
   );
 };
