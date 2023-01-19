@@ -23,6 +23,7 @@ const Exercise2 = () => {
     // GET FIXED RANGE FROM API MOCKING ASYNC:
     getFixedRange()
       .then((data) => {
+        // SORT VALUES OF FIXED ARRAY CASE: 
         const range = data?.valueRanges.sort((a, b) => a - b)
         setMin(range[0]);
         setMax(range[range.length -1]);
