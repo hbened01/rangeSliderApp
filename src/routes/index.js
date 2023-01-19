@@ -5,6 +5,7 @@ import { NotFound } from "./../components"
 
 // ADD CONFIG ROUTES:
 const routes = () => {
+  // GET COMPONENTS FROM DIRECTORY
   const Exercise1Component = <Exercise1 />
   const Exercise2Component = <Exercise2 />
   const NotFoundComponent = <NotFound />
