@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Range, Chip } from "./../../components";
-import { getNormalRange } from "./../../services";
-import "./index.less";
+import { Range, Chip } from "../../components";
+import { getNormalRange } from "../../services";
+import "./Exercise1.less";
 
 const Exercise1 = () => {
   // SET INITIALIZATION STATES

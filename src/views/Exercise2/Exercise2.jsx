@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { useNavigate, useLocation } from "react-router-dom";
-import { Range, Chip } from "./../../components"
-import { getFixedRange } from "./../../services";
-import "./index.less"
+import { Range, Chip } from "../../components"
+import { getFixedRange } from "../../services";
+import "./Exercise2.less"
 
 const Exercise2 = () => {
   // SET INITIALIZATION STATES
