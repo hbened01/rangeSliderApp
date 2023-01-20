@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Range, Chip } from "../../components";
-import { getNormalRange } from "../../services";
+import getNormalRange from "../../services/getNormalRange";
 import "./Exercise1.less";
 
 const Exercise1 = () => {
