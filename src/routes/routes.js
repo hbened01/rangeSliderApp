@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Exercise1, Exercise2 } from './../views'
-import { NotFound } from "./../components"
+import { Exercise1, Exercise2 } from '../views'
+import { NotFound } from "../components"
 
 // ADD CONFIG ROUTES:
 const routes = () => {

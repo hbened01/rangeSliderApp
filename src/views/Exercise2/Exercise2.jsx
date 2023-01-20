@@ -17,8 +17,7 @@ const Exercise2 = () => {
   // ONCLICK TO NEXT EXERCISE:
   const handleGoToNextExercise = (e) => {
     e.preventDefault();
-    console.log(location, window.location.pathname)
-    // navigate('/exercise1');
+    navigate('/exercise1');
   };
 
   useEffect(() => {
