@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Range, Chip } from "./../../components"
 import { getFixedRange } from "./../../services";
 import "./index.less"
@@ -12,11 +12,13 @@ const Exercise2 = () => {
   const [value, setValue] = useState({ min, max })
   const [range, setRange] = useState([])
   const navigate = useNavigate();
+  const location = useLocation();
 
   // ONCLICK TO NEXT EXERCISE:
   const handleGoToNextExercise = (e) => {
     e.preventDefault();
-    navigate('/exercise1');
+    console.log(location, window.location.pathname)
+    // navigate('/exercise1');
   };
 
   useEffect(() => {

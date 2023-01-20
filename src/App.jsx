@@ -1,11 +1,12 @@
 import React from 'react'
 import Routes from './routes'
+import './styles.less'
 const App = () => {
   return (
     <>
-      <div className="title-range">
+      <article className="title-range" title="main-title" style={{padding: '15px'}}>
         Range Slider
-      </div>
+      </article>
       <Routes/>
     </>
   )

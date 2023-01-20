@@ -12,6 +12,7 @@ const routes = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={ Exercise1Component } />
         <Route path="/exercise1" element={ Exercise1Component } />
         <Route path="/exercise2" element={ Exercise2Component } />
         <Route path="*" element={ NotFoundComponent } />
