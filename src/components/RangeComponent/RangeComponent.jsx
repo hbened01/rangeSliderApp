@@ -49,7 +49,7 @@ const RangeComponent = ({ min, max, step, value, range, onChangeValue }) => {
 
   return (
 
-    <div className="wrapper">
+    <div className="wrapper" id="wrapper-container">
 
       <div className="input-wrapper">
         <input

@@ -49,7 +49,7 @@ const Exercise1 = () => {
       <Chip head={`Min`} content={`result value is: ${value.min}€`} />
       <Chip head={`Max`} content={`result value is: ${value.max}€`} />
       {/* GO TO NEXT EXERCISE */}
-      <button className="button-go" onClick={handleGoToNextExercise}>
+      <button className="button-go" id="button-go-exercise2" onClick={handleGoToNextExercise}>
         Go to Exercise 2
       </button>
     </div>
