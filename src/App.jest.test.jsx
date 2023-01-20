@@ -18,7 +18,7 @@ describe('initApp', () => {
     expect(screen.getByText(`Range Slider`)).toBeInTheDocument()
     expect(article).toBeInTheDocument()
     expect(article).toHaveStyle({
-      padding: '15px',
+      padding: '15px'
     })
   });
   

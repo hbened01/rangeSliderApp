@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Exercise1, Exercise2 } from '../views'
 import { NotFound } from "../components"
 
@@ -18,7 +18,7 @@ const routes = () => {
         <Route path="*" element={ NotFoundComponent } />
       </Routes>
     </BrowserRouter>
-  );
-};
+  )
+}
 
-export default routes;
+export default routes

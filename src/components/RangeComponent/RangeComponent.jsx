@@ -22,10 +22,9 @@ const RangeComponent = ({ min, max, step, value, range, onChangeValue }) => {
     if (!value) setMinValue(newMinVal)
     // IF RANGE FIXED 
     if ( range.length > 0 ) {
-      if (range.indexOf(newMinVal) !== -1) {
+      if (range.indexOf(newMinVal) !== -1) 
         onChangeValue({ min: newMinVal, max: maxValue })
-      }
-      return
+        return
     }
     onChangeValue({ min: newMinVal, max: maxValue })
   }
@@ -37,10 +36,9 @@ const RangeComponent = ({ min, max, step, value, range, onChangeValue }) => {
     if (!value) setMaxValue(newMaxVal)
     // IF RANGE FIXED 
     if ( range.length > 0 ) {
-      if (range.indexOf(newMaxVal) !== -1) {
+      if (range.indexOf(newMaxVal) !== -1) 
         onChangeValue({ min: minValue, max: newMaxVal })
-      }
-      return
+        return
     }
     onChangeValue({ min: minValue, max: newMaxVal })
   }

@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { notFoundImg as img } from "../../assets";
+import React from "react"
+import { Link } from "react-router-dom"
+import { notFoundImg as img } from "../../assets"
 import "./NotFoundComponent.less"
 
 const NotFoundComponent = () => (
@@ -10,6 +10,6 @@ const NotFoundComponent = () => (
       <Link to="/exercise1">Go to Exercise1 </Link>
     </p>
   </div>
-);
+)
 
-export default NotFoundComponent;
+export default NotFoundComponent
