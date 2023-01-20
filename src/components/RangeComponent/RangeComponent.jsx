@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { PropTypes } from "prop-types";
-import './index.less'
+import './RangeComponent.less'
 
-const Range = ({ min, max, step, value, range, onChangeValue }) => {
+const RangeComponent = ({ min, max, step, value, range, onChangeValue }) => {
   // SET STATE:
   const [minValue, setMinValue] = useState(value ? value.min : min)
   const [maxValue, setMaxValue] = useState(value ? value.max : max)
@@ -99,7 +99,7 @@ const Range = ({ min, max, step, value, range, onChangeValue }) => {
   )
 }
 
-Range.propTypes = {
+RangeComponent.propTypes = {
   min: PropTypes.number,
   max: PropTypes.number,
   step: PropTypes.number,
@@ -108,4 +108,4 @@ Range.propTypes = {
   onChangeValue: PropTypes.func,
 }
 
-export default Range
+export default RangeComponent

@@ -21,4 +21,5 @@ describe('initApp', () => {
       padding: '15px',
     })
   });
+  
 });

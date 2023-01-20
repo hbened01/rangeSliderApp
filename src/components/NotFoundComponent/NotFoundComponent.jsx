@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { notFoundImg as img } from "../../assets";
-import "./index.less"
-const NotFound = () => (
+import "./NotFoundComponent.less"
+
+const NotFoundComponent = () => (
   <div className="img-container">
     <img className="img-not-found" src={img} alt="404 not found page"/>
     <p style={{ textAlign: "center" }}>
@@ -11,4 +12,4 @@ const NotFound = () => (
   </div>
 );
 
-export default NotFound;
+export default NotFoundComponent;

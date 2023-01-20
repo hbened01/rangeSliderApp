@@ -1,8 +1,8 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import "./index.less";
+import "./ChipComponent.less";
 
-const Chip = ({ head, content }) => {
+const ChipComponent = ({ head, content }) => {
   return (
     <div className="chip">
       <div className="chip-head">{ head }</div>
@@ -11,9 +11,9 @@ const Chip = ({ head, content }) => {
   );
 };
 
-Chip.propTypes = {
+ChipComponent.propTypes = {
   head: PropTypes.string,
   content: PropTypes.string
 }
 
-export default Chip;
+export default ChipComponent;
