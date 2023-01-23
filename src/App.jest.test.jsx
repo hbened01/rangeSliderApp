@@ -1,19 +1,26 @@
-import { render, screen, fireEvent } from "@testing-library/react"
+import { render, screen, fireEvent, cleanup } from "@testing-library/react"
 import "@testing-library/jest-dom"
 import App from "./App"
 
+
 describe("initApp", () => {
-  let dom, article
+  const mock = {}
+  afterEach(cleanup)
   beforeEach(() => {
-    dom = render(<App />)
-    article = screen.getByRole("article", { name: "main-title" })
+    const { container } = render(<App />)
+    const article = screen.getByRole("article", { name: "main-title" })
+    const button = screen.getByRole("button", { name: "Go to Exercise 2" })
+    mock.container = container
+    mock.article = article
+    mock.button = button
   })
 
-  test("first route render", () => {
+  it("first route render", () => {
     expect(window.location.pathname).toBe("/")
   })
 
-  test("if title is correct", () => {
+  it("if title is correct", () => {
+    const { article } = mock
     expect(screen.getByText(`Range Slider`)).toBeInTheDocument()
     expect(article).toBeInTheDocument()
     expect(article).toHaveStyle({
@@ -21,29 +28,31 @@ describe("initApp", () => {
     })
   })
 
-  test("verific button exist", () => {
-    const button = dom.container.querySelector('#button-go-exercise2')
+  it("verific button exist", () => {
+    const { container } = mock
+    const button = container.querySelector('#button-go-exercise2')
     expect(button).toBeInTheDocument()
     expect(screen.getByText(`Go to Exercise 2`)).toBeInTheDocument()
   })
 
-  test("verific range slider exist", () => {
-    const wrapper = dom.container.querySelector('#wrapper-container')
+  it("verific range slider exist", () => {
+    const { container } = mock
+    const wrapper = container.querySelector('#wrapper-container')
     expect(wrapper).toBeInTheDocument()
   })
 })
 
 describe("goToNextExercise", () => {
-
-  let button
+  
+  const mock = {}
   beforeEach(() => {
     render(<App />)
-    button = screen.getByRole("button", { name: "Go to Exercise 2" })
+    const button = screen.getByRole("button", { name: "Go to Exercise 2" })
+    mock.button = button
   })
-
-  test("verific go to next exercise", () => {
+  it("verific go to next exercise", () => {
+    const { button } = mock
     fireEvent.click(button)
     expect(screen.getByText(`Go to Exercise 1`)).toBeInTheDocument()
   })
-
 })
