@@ -3,12 +3,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Exercise1, Exercise2 } from '../views'
 import { NotFound } from "../components"
 
+export const Exercise1Component = <Exercise1 />
+export const Exercise2Component = <Exercise2 />
+export const NotFoundComponent = <NotFound />
+
 // ADD CONFIG ROUTES:
 const routes = () => {
   // GET COMPONENTS FROM DIRECTORY
-  const Exercise1Component = <Exercise1 />
-  const Exercise2Component = <Exercise2 />
-  const NotFoundComponent = <NotFound />
   return (
     <BrowserRouter>
       <Routes>
