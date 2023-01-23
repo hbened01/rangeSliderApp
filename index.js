@@ -1,9 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './src/App'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./src/App";
 
-ReactDOM.createRoot(document.getElementById('app-range-slider')).render(
+ReactDOM.createRoot(document.getElementById("app-range-slider")).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);
